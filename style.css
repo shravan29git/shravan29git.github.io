@@ -1,0 +1,178 @@
+:root {
+  --paper: #F7F6F2;
+  --ink: #1A1D1F;
+  --indigo: #2C3E66;
+  --gold: #C89B3C;
+  --line: #DAD6CC;
+  --muted: #6B6558;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 4rem;
+}
+
+.label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  line-height: 1.08;
+  margin: 0 0 1.25rem;
+  color: var(--indigo);
+}
+
+.tagline {
+  font-size: 1.1rem;
+  max-width: 34em;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.status {
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Notebook-margin row layout */
+.row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.row-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.row-content p {
+  margin: 0 0 0.75rem;
+  max-width: 60ch;
+}
+.row-content p:last-child { margin-bottom: 0; }
+
+/* Education timeline */
+.timeline-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: baseline;
+}
+.timeline-year {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.timeline-title {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0.15rem;
+}
+.timeline-sub {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Skills */
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1.5rem;
+}
+.skill-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+}
+.skill-name { font-weight: 500; }
+.skill-level {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-list li { margin-bottom: 0.5rem; }
+.contact-list a {
+  color: var(--indigo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Footer */
+.foot {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .row-label {
+    padding-top: 0;
+  }
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
